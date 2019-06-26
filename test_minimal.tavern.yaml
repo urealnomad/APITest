@@ -52,3 +52,11 @@ stages:
       status_code: 200
       body:
         id: 1
+  - name: nonexistent endpoint
+    request:
+      url: "{host:s}/nonexistent"
+      method: GET
+    response:
+      status_code: 404
+      body:
+        {}
