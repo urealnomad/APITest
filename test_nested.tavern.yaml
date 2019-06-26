@@ -7,45 +7,55 @@ stages:
   - name: comments in posts
     request:
       url: "{host:s}/posts/1/comments"
-      json:
+      params:
         postId: 1
-        id: 1
+        id: 2
       method: GET
     response:
       status_code: 200
+      body:
+        - id: 2
   - name: albums per user
     request:
       url: "{host:s}/users/1/albums"
-      json:
-        postId: 1
-        id: 1
+      params:
+        albumId: 1
+        id: 3
       method: GET
     response:
       status_code: 200
+      body:
+        - id: 3
   - name: todos per user
     request:
       url: "{host:s}/users/1/todos"
-      json:
-        postId: 1
-        id: 1
+      params:
+        userId: 1
+        id: 4
       method: GET
     response:
       status_code: 200
+      body:
+        - id: 4
   - name: posts per user
     request:
       url: "{host:s}/users/1/posts"
-      json:
-        postId: 1
-        id: 1
+      params:
+        userId: 1
+        id: 8
       method: GET
     response:
       status_code: 200
+      body:
+        - id: 8
   - name: photos in albums
     request:
       url: "{host:s}/albums/1/photos"
-      json:
-        postId: 1
-        id: 1
+      params:
+        albumId: 1
+        id: 10
       method: GET
     response:
       status_code: 200
+      body:
+        - id: 10
