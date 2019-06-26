@@ -52,3 +52,23 @@ if not success:
 Tavern is an open source framework, declarative and extensible.
 So no need to write code from the start, just describe your test.
 If later on there is some functionality need that is not covered by the framework, a python function can be written.
+
+### Testing strategy
+
+For each endpoint:
+
+ Test all possible request methods (GET, POST, PUT, PATCH, DELETE and OPTIONS)
+
+For each request method:
+
+ Check request header and body,
+
+ Check response header and body
+
+ Check response codes
+
+For headers, check required/optional/missing/not supported values
+
+For body, check wrong data type, empty, null, invalid json
+
+
