@@ -1,0 +1,54 @@
+test_name: Check we can get to all base endpoints
+
+includes:
+  - !include common.yaml
+
+stages:
+  - name: posts
+    request:
+      url: "{host:s}/posts/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1
+  - name: comments
+    request:
+      url: "{host:s}/comments/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1
+  - name: albums
+    request:
+      url: "{host:s}/albums/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1
+  - name: photos
+    request:
+      url: "{host:s}/photos/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1
+  - name: todos
+    request:
+      url: "{host:s}/todos/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1
+  - name: users
+    request:
+      url: "{host:s}/users/1"
+      method: GET
+    response:
+      status_code: 200
+      body:
+        id: 1

@@ -1,0 +1,51 @@
+test_name: Check we can get to all nested routes
+
+includes:
+  - !include common.yaml
+
+stages:
+  - name: comments in posts
+    request:
+      url: "{host:s}/posts/1/comments"
+      json:
+        postId: 1
+        id: 1
+      method: GET
+    response:
+      status_code: 200
+  - name: albums per user
+    request:
+      url: "{host:s}/users/1/albums"
+      json:
+        postId: 1
+        id: 1
+      method: GET
+    response:
+      status_code: 200
+  - name: todos per user
+    request:
+      url: "{host:s}/users/1/todos"
+      json:
+        postId: 1
+        id: 1
+      method: GET
+    response:
+      status_code: 200
+  - name: posts per user
+    request:
+      url: "{host:s}/users/1/posts"
+      json:
+        postId: 1
+        id: 1
+      method: GET
+    response:
+      status_code: 200
+  - name: photos in albums
+    request:
+      url: "{host:s}/albums/1/photos"
+      json:
+        postId: 1
+        id: 1
+      method: GET
+    response:
+      status_code: 200
